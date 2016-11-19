@@ -1,7 +1,10 @@
 package swing;
 
-public class FM_Akun extends javax.swing.JDialog {
+import java.util.ArrayList;
+import java.util.List;
 
+public class FM_Akun extends javax.swing.JDialog {
+    List<akun_class> akun=new ArrayList<>();
     /**
      * Creates new form FM_Akun
      */
@@ -80,6 +83,11 @@ public class FM_Akun extends javax.swing.JDialog {
         });
 
         jbsimpan.setText("Simpan");
+        jbsimpan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbsimpanActionPerformed(evt);
+            }
+        });
 
         jbhapus.setText("Hapus");
 
@@ -197,6 +205,16 @@ public class FM_Akun extends javax.swing.JDialog {
     private void jbtambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtambahActionPerformed
     addstate();
     }//GEN-LAST:event_jbtambahActionPerformed
+
+    private void jbsimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbsimpanActionPerformed
+    akun_class ak=new akun_class();
+    ak.setUsername(jtusername.getText());
+    ak.setNama(jtnama.getText());
+    ak.setUsername(jtpassword.getText());
+    ak.setStatus((String)jcombstatus.getSelectedItem());
+    akun.add(ak);
+    initstatic();
+    }//GEN-LAST:event_jbsimpanActionPerformed
 
     /**
      * @param args the command line arguments
