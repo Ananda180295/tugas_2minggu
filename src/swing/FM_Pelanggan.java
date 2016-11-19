@@ -92,6 +92,11 @@ public class FM_Pelanggan extends javax.swing.JDialog {
         jbhapus.setText("Hapus");
 
         jbtutup.setText("Tutup");
+        jbtutup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtutupActionPerformed(evt);
+            }
+        });
 
         tabelpelanggan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -211,6 +216,10 @@ public class FM_Pelanggan extends javax.swing.JDialog {
     initstatic();
     }//GEN-LAST:event_jbsimpanActionPerformed
 
+    private void jbtutupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtutupActionPerformed
+    this.dispose();
+    }//GEN-LAST:event_jbtutupActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -249,6 +258,7 @@ public class FM_Pelanggan extends javax.swing.JDialog {
         jbhapus.setEnabled(false);
         jbedit.setEnabled(false);
         //tampilkan data tabel
+        tabelpelanggan.setModel(new Pelanggan_Table(daftarpelanggan));
         jbtambah.setEnabled(true);
         jtcari.setEnabled(true);
         jbcari.setEnabled(true);
