@@ -2,7 +2,7 @@ package swing;
 public class pelanggan_class {
     private String kode, nama, alamat, telepon;
 
-public pelanggan_class(String kode, String nama, String alamat, String telepon, String kontak) {
+public pelanggan_class(String kode, String nama, String alamat, String telepon) {
         this.kode = kode;
         this.nama = nama;
         this.alamat = alamat;
