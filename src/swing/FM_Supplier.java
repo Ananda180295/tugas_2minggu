@@ -44,6 +44,9 @@ public class FM_Supplier extends javax.swing.JDialog {
         jbedit = new javax.swing.JButton();
         jbhapus = new javax.swing.JButton();
         jbtutup = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jtcari = new javax.swing.JTextField();
+        jbcari = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("SUPPLIER");
@@ -105,14 +108,22 @@ public class FM_Supplier extends javax.swing.JDialog {
             }
         });
 
+        jLabel7.setText("Cari Berdasarkan");
+
+        jbcari.setText("Cari");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(111, 111, 111))
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
@@ -126,11 +137,8 @@ public class FM_Supplier extends javax.swing.JDialog {
                             .addComponent(jtalamat)
                             .addComponent(jttelepon)
                             .addComponent(jtkontak)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jbtambah)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                         .addComponent(jbsimpan)
@@ -139,12 +147,16 @@ public class FM_Supplier extends javax.swing.JDialog {
                         .addGap(18, 18, 18)
                         .addComponent(jbhapus)
                         .addGap(18, 18, 18)
-                        .addComponent(jbtutup)))
+                        .addComponent(jbtutup))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jtcari, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jbcari)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(111, 111, 111))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,7 +191,12 @@ public class FM_Supplier extends javax.swing.JDialog {
                     .addComponent(jbtutup))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jtcari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbcari))
+                .addGap(19, 19, 19))
         );
 
         pack();
@@ -222,13 +239,16 @@ public class FM_Supplier extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton jbcari;
     private javax.swing.JButton jbedit;
     private javax.swing.JButton jbhapus;
     private javax.swing.JButton jbsimpan;
     private javax.swing.JButton jbtambah;
     private javax.swing.JButton jbtutup;
     private javax.swing.JTextField jtalamat;
+    private javax.swing.JTextField jtcari;
     private javax.swing.JTextField jtkode;
     private javax.swing.JTextField jtkontak;
     private javax.swing.JTextField jtnama;
@@ -247,6 +267,8 @@ private void initstatic() {
         //tampilkan data tabel
         tabelsupplier.setModel(new Supplier_Table(daftarsupplier));
         jbtambah.setEnabled(true);
+        jtcari.setEnabled(true);
+        jbcari.setEnabled(true);
 }
 private void addstate(){
         jtkode.setEnabled(true);
