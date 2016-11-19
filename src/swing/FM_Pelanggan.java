@@ -1,7 +1,10 @@
 package swing;
+import java.util.ArrayList;
+import java.util.List;
 
+    
 public class FM_Pelanggan extends javax.swing.JDialog {
-
+    List<pelanggan_class> daftarpelanggan=new ArrayList<>();
     /**
      * Creates new form FM_Pelanggan
      */
@@ -78,6 +81,11 @@ public class FM_Pelanggan extends javax.swing.JDialog {
         });
 
         jbsimpan.setText("Simpan");
+        jbsimpan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbsimpanActionPerformed(evt);
+            }
+        });
 
         jbedit.setText("Edit");
 
@@ -192,6 +200,16 @@ public class FM_Pelanggan extends javax.swing.JDialog {
     private void jbtambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtambahActionPerformed
     addstatic();
     }//GEN-LAST:event_jbtambahActionPerformed
+
+    private void jbsimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbsimpanActionPerformed
+    pelanggan_class pel=new pelanggan_class();
+    pel.setKode(jtkode.getText());
+    pel.setNama(jtnama.getText());
+    pel.setAlamat(jtalamat.getText());
+    pel.setTelepon(jttelepon.getText());
+    daftarpelanggan.add(pel);
+    initstatic();
+    }//GEN-LAST:event_jbsimpanActionPerformed
 
     /**
      * @param args the command line arguments
