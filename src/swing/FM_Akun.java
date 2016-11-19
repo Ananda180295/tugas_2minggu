@@ -94,6 +94,11 @@ public class FM_Akun extends javax.swing.JDialog {
         jbedit.setText("Edit");
 
         jbtutup.setText("Tutup");
+        jbtutup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtutupActionPerformed(evt);
+            }
+        });
 
         tabelakun.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -210,11 +215,15 @@ public class FM_Akun extends javax.swing.JDialog {
     akun_class ak=new akun_class();
     ak.setUsername(jtusername.getText());
     ak.setNama(jtnama.getText());
-    ak.setUsername(jtpassword.getText());
+    ak.setPassword(jtpassword.getText());
     ak.setStatus((String)jcombstatus.getSelectedItem());
     akun.add(ak);
     initstatic();
     }//GEN-LAST:event_jbsimpanActionPerformed
+
+    private void jbtutupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtutupActionPerformed
+    this.dispose();
+    }//GEN-LAST:event_jbtutupActionPerformed
 
     /**
      * @param args the command line arguments
@@ -291,6 +300,7 @@ public class FM_Akun extends javax.swing.JDialog {
         jbhapus.setEnabled(false);
         jbedit.setEnabled(false);
         //tampilkan data tabel
+        tabelakun.setModel(new Akun_Table(akun));
         jbtambah.setEnabled(true);
         jtcari.setEnabled(true);
         jbcari.setEnabled(true);
