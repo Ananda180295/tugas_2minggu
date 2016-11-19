@@ -8,6 +8,8 @@ public class FM_Pelanggan extends javax.swing.JDialog {
     public FM_Pelanggan(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setLocationRelativeTo(this);
+        initstatic();
     }
 
     /**
@@ -69,6 +71,11 @@ public class FM_Pelanggan extends javax.swing.JDialog {
         jLabel5.setText("Telepon");
 
         jbtambah.setText("Tambah");
+        jbtambah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtambahActionPerformed(evt);
+            }
+        });
 
         jbsimpan.setText("Simpan");
 
@@ -182,6 +189,10 @@ public class FM_Pelanggan extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jbtambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtambahActionPerformed
+    addstatic();
+    }//GEN-LAST:event_jbtambahActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -210,4 +221,28 @@ public class FM_Pelanggan extends javax.swing.JDialog {
     private javax.swing.JTextField jttelepon;
     private javax.swing.JTable tabelpelanggan;
     // End of variables declaration//GEN-END:variables
+
+    private void initstatic() {
+        jtkode.setEnabled(false);
+        jtnama.setEnabled(false);
+        jtalamat.setEnabled(false);
+        jttelepon.setEnabled(false);
+        jbsimpan.setEnabled(false);
+        jbhapus.setEnabled(false);
+        jbedit.setEnabled(false);
+        //tampilkan data tabel
+        jbtambah.setEnabled(true);
+        jtcari.setEnabled(true);
+        jbcari.setEnabled(true);
+    }
+    private void addstatic() {
+        jtkode.setEnabled(true);
+        jtnama.setEnabled(true);
+        jtalamat.setEnabled(true);
+        jttelepon.setEnabled(true);
+        jtkode.requestFocus();
+        //aktif simpan button
+        jbsimpan.setEnabled(true);
+        jbtambah.setEnabled(false);
+    }
 }
