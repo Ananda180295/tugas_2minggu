@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package swing;
 
-/**
- *
- * @author Agus
- */
 public class FM_Akun extends javax.swing.JDialog {
 
     /**
@@ -17,6 +8,8 @@ public class FM_Akun extends javax.swing.JDialog {
     public FM_Akun(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setLocationRelativeTo(this);
+        initstatic();
     }
 
     /**
@@ -69,7 +62,7 @@ public class FM_Akun extends javax.swing.JDialog {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setText("AKUN");
 
-        jcombstatus.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jcombstatus.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-- Pilihan --", "Admin", "Staff" }));
 
         jLabel2.setText("Username");
 
@@ -80,6 +73,11 @@ public class FM_Akun extends javax.swing.JDialog {
         jLabel5.setText("Status");
 
         jbtambah.setText("Tambah");
+        jbtambah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtambahActionPerformed(evt);
+            }
+        });
 
         jbsimpan.setText("Simpan");
 
@@ -196,6 +194,10 @@ public class FM_Akun extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jbtambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtambahActionPerformed
+    addstate();
+    }//GEN-LAST:event_jbtambahActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -261,4 +263,29 @@ public class FM_Akun extends javax.swing.JDialog {
     private javax.swing.JTextField jtusername;
     private javax.swing.JTable tabelakun;
     // End of variables declaration//GEN-END:variables
+
+    private void initstatic() {
+        jtusername.setEnabled(false);
+        jtnama.setEnabled(false);
+        jtpassword.setEnabled(false);
+        jcombstatus.setEnabled(false);
+        jbsimpan.setEnabled(false);
+        jbhapus.setEnabled(false);
+        jbedit.setEnabled(false);
+        //tampilkan data tabel
+        jbtambah.setEnabled(true);
+        jtcari.setEnabled(true);
+        jbcari.setEnabled(true);
+    }
+    
+    private void addstate() {
+        jtusername.setEnabled(true);
+        jtnama.setEnabled(true);
+        jtpassword.setEnabled(true);
+        jcombstatus.setEnabled(true);
+        jtusername.requestFocus();
+        jbsimpan.setEnabled(true);
+        jbtambah.setEnabled(false);
+        
+    }
 }
